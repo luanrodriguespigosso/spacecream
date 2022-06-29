@@ -2,7 +2,9 @@
   Space Cream
 </h1>
 
-![preview](/assets/img/preview.png)
+<p align="center">
+  <img src="/assets/img/preview.png">
+</p>
 
 ## 💼 Tecnologias utilizadas
 
