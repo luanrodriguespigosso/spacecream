@@ -28,6 +28,13 @@ img {
   height: auto;
 }
 
+p {
+  font-family: var(--ff-content);
+  font-size: 2rem;
+  line-height: 1.5rem;
+  padding: 1.4rem 3.2rem 6rem;
+}
+
 .container {
   max-width: 38.4rem;
   margin: 0 auto;
@@ -62,27 +69,24 @@ h1 {
 }
 
 main {
+  display: grid;
+  gap: 3.6rem;
   padding: 1.4rem 3.2rem 3rem;
 }
 
-p {
-  font-family: var(--ff-content);
-  font-size: 2rem;
-  line-height: 1.5rem;
-  margin-bottom: 6rem;
-}
-
-#menor {
-  height: 25rem;
-}
-
-#maior {
+.card:nth-child(even) img {
   height: 45rem;
 }
 
 .card {
   position: relative;
-  margin-bottom: 3.6rem;
+  transition: transform 250ms;
+  border-radius: 2rem;
+  animation: downtop 700ms 300ms backwards;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card img {
@@ -101,4 +105,29 @@ p {
 
   width: 12rem;
   border-radius: 2rem;
+  animation: topdown 700ms 700ms backwards;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
