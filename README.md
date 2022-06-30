@@ -6,6 +6,10 @@
   <img src="/assets/img/preview.png">
 </p>
 
+## 🔗 Código do projeto
+
+<https://codepen.io/luanpigosso/pen/gOebXJr>
+
 ## 💼 Tecnologias utilizadas
 
 - HTML;

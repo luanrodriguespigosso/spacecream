@@ -5,10 +5,10 @@
 }
 
 :root {
-  --hue: 280;
+  --hue: 250;
   --bg-header: hsl(var(--hue), 17%, 62%);
   --bg-btn: hsl(var(--hue), 91%, 96%);
-  --bg-main: hsl(var(--hue), 100%, 97%);
+  --bg-main: hsl(var(--hue), 100%, 95%);
   --bg-stip-header: hsl(275, 18%, 79%);
   --tc-subtitle: hsl(var(--hue), 17%, 35%);
   --ff-title: "Staatliches", cursive;
@@ -31,29 +31,32 @@ img {
 p {
   font-family: var(--ff-content);
   font-size: 2rem;
-  line-height: 1.5rem;
-  padding: 1.4rem 3.2rem 6rem;
+  line-height: 2.5rem;
+  padding: 3.2rem 3.2rem 6rem;
 }
 
 .container {
-  max-width: 38.4rem;
   margin: 0 auto;
   background-color: var(--bg-main);
 }
 
 header {
-  background-color: var(--bg-header);
+  /* background-color: var(--bg-header); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+  background-size: cover;
+  background-position: center;
   height: 28rem;
 }
 
 header img {
   width: 13.7rem;
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0rem 0.6rem 0.6rem rgba(0, 0, 0, 0.25));
   margin: 2rem 0;
 }
 
 #title-header {
-  background-color: var(--bg-stip-header);
+  /* background-color: var(--bg-stip-header); */
   height: 5rem;
   display: flex;
   justify-content: center;
@@ -105,13 +108,13 @@ main {
 
   width: 12rem;
   border-radius: 2rem;
-  animation: topdown 700ms 700ms backwards;
+  animation: topdown 700ms 600ms backwards;
 }
 
 @keyframes topdown {
   0% {
     opacity: 0;
-    transform: translateY(-15px);
+    transform: translateY(-40px);
   }
 
   100% {
@@ -129,5 +132,34 @@ main {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 20em) {
+  .container {
+    max-width: 42.5rem;
+  }
+}
+
+@media (min-width: 26.6em) {
+  .container {
+    max-width: 76.8rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .container {
+    max-width: 112.4rem;
+  }
+}
+
+@media (min-width: 70.3em) {
+  .container {
+    max-width: 198rem;
+  }
+
+  .content-info {
+    max-width: 112.4rem;
+    margin: 0 auto;
   }
 }
