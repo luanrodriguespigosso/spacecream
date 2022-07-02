@@ -22,6 +22,7 @@ body {
   font-family: var(--ff-title);
   font-size: 1.6rem;
   text-align: center;
+  background-color: var(--bg-main);
 }
 
 img {
@@ -43,16 +44,20 @@ a {
 
 .container {
   margin: 0 auto;
-  background-color: var(--bg-main);
 }
 
 header {
-  /* background-color: var(--bg-header); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
   background-size: cover;
   background-position: center;
   height: 28rem;
+}
+
+header img {
+  width: 17rem;
+  filter: drop-shadow(0rem 0.6rem 0.6rem rgba(0, 0, 0, 0.25));
+  margin: 1.5rem 0 0.5rem;
 }
 
 #logo-arco {
@@ -71,11 +76,11 @@ h1 {
   display: none;
 }
 
-/* main {
+main {
   display: grid;
-  gap: 3.6rem;
-  padding: 1.4rem 3.2rem 3rem;
-} */
+  gap: 3.2rem;
+  margin: 2rem 3.2rem 6rem;
+}
 
 .card {
   position: relative;
@@ -112,6 +117,10 @@ h1 {
   animation: topdown 700ms 600ms backwards;
 }
 
+.img-desktop {
+  display: none;
+}
+
 @keyframes topdown {
   0% {
     opacity: 0;
@@ -138,7 +147,7 @@ h1 {
 /* Width: 320px */
 @media (min-width: 320px) {
   .container {
-    max-width: 42.5rem;
+    max-width: 76.8rem;
   }
 
   #title-header {
@@ -148,32 +157,43 @@ h1 {
     align-items: center;
   }
 
-  header img {
-    width: 13.7rem;
-    filter: drop-shadow(0rem 0.6rem 0.6rem rgba(0, 0, 0, 0.25));
-    margin: 2rem 0;
-  }
-
   #logo-arco {
     display: none;
   }
 }
-/* Width: 425px */
-@media (min-width: 26.6em) {
-  .container {
-    max-width: 76.8rem;
-  }
-}
-/* Width: 768px 
+
+/* Width: 768px */
 @media (min-width: 768px) {
   .container {
-    max-width: 112.3rem;
+    max-width: 144rem;
   }
 
-  .content-info {
-    max-width: 80rem;
+  main {
+    margin: auto;
+    padding: 3rem;
+    grid-template-areas:
+      "A B"
+      "F B"
+      "F E";
   }
-}*/
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(5) {
+    grid-area: E;
+  }
+
+  main div:nth-child(6) {
+    grid-area: F;
+  }
+}
+
 /* Width: 1440px */
 @media (min-width: 1440px) {
   .container {
@@ -229,10 +249,8 @@ h1 {
   }
 
   main {
-    display: grid;
     margin: auto;
     padding: 3rem;
-    gap: 3.2rem;
     grid-template-areas:
       "A B C"
       "D B F"
@@ -263,9 +281,9 @@ h1 {
     grid-area: F;
   }
 
-  /* .card img {
-    max-width: 22rem;
-  } */
+  .img-desktop {
+    display: block;
+  }
 
   footer p {
     font-family: "Open Sans", sans-serif;
